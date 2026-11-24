@@ -48,3 +48,10 @@ java GameMain
 - Game over / lives system
 - Increasing difficulty over time
 - Keeping the paddle within the window bounds
+
+## Asset credits
+All assets were found and downloaded off of (support the artists!)
+https://opengameart.org/content/16x16-rpg-items-db32
+https://alexkovacsart.itch.io/free-pixel-art-foods
+https://craftpix.net/categorys/pixel-art-2d-game-backgrounds/
+
