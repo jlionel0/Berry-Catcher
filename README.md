@@ -1,6 +1,7 @@
 # Berry Catcher
 
 A simple arcade game written in Java with Swing, made as a fun side project. Berries fall from the top of the screen and you move a paddle to catch them before they hit the bottom.
+(sidenote: this readme is the only thing written by claude)
 
 ## How to play
 
