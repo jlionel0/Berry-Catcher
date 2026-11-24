@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Player {
     private int x, y, width, height;
@@ -6,12 +7,15 @@ public class Player {
     private int speed = baseSpeed;
     private boolean dashing = false;
 
+    private static final BufferedImage IMG = Assets.load("/assets/bucket.png");
+    private static final BufferedImage DASH_IMG = Assets.load("/assets/dashing.png");
+
 
     public Player(int x, int y) {
         this.x = x;
         this.y = y;
-        this.width = 60;
-        this.height = 20;
+        this.width = 48;
+        this.height = 48;
     }
 
     public void moveLeft() {
@@ -38,8 +42,13 @@ public class Player {
     }
 
     public void draw(Graphics g) { // draw player character
-        g.setColor(dashing ? Color.GREEN : Color.BLUE); // change color when dashing
-        g.fillRect(x, y, width, height);
+        BufferedImage img = dashing ? DASH_IMG : IMG;
+        if(img != null) {
+            g.drawImage(img, x, y, width, height, null);
+        } else {
+            g.setColor(dashing ? Color.GREEN : Color.BLUE); // green if dashing otherwise blue
+            g.fillRect(x, y, width, height);
+        }
     }
 
     public Rectangle getBounds() {

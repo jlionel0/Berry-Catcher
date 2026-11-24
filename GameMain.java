@@ -8,7 +8,8 @@ public class GameMain {
         
         frame.addKeyListener(controller);
         frame.add(game);
-        frame.setSize(500, 550);
+        frame.pack();
+        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
