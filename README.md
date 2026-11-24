@@ -6,8 +6,9 @@ A simple arcade game written in Java with Swing, made as a fun side project. Ber
 ## How to play
 
 - Catch a berry with your paddle: **+1 point**
+- Blueberries are worth 10 points
 - Miss a berry: **-1 point** (your score never drops below 0)
-- Berries spawn randomly and fall continuously, so keep moving!
+- Berries spawn randomly, so catch as many as you can within 30 seconds!
 
 ## Controls
 
@@ -39,10 +40,11 @@ java GameMain
 | `GameController.java` | Keyboard input handling (arrows and shift) |
 | `Player.java` | The paddle: movement, dash speed, and drawing |
 | `Berry.java` | A falling berry: gravity, drawing, and hitbox |
+| `Assets.java` | Loads each asset once to prevent slowdowns |
+| `assets/` | A folder containing all the assets used in this game |
 
 ## Possible future ideas
 
 - Game over / lives system
 - Increasing difficulty over time
 - Keeping the paddle within the window bounds
-- Different berry types with different point values
