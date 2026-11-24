@@ -32,7 +32,10 @@ public class GamePanel extends JPanel implements ActionListener {
     @Override 
     public void actionPerformed(ActionEvent e) {
         if(Math.random() < 0.05) {
-            berries.add(new Berry((int)(Math.random() * getWidth()), 0)); // 5% chance for berry spawn each frame
+            berries.add(new Berry((int)(Math.random() * getWidth()), 0, false)); // 5% chance for berry spawn each frame
+        }
+        if(Math.random() < 0.01) {
+            berries.add(new Berry((int)(Math.random() * getWidth()), 0, true)); // 1% chance for a special berry spawn each frame
         }
 
         for(int i = 0; i < berries.size(); i++) {
@@ -40,7 +43,7 @@ public class GamePanel extends JPanel implements ActionListener {
             berry.fall();
 
             if(berry.getBounds().intersects(player.getBounds())) { // collision check
-                score++;
+                score += berry.isSpecial() ? 10 : 1; // special berries give 10 points
                 berries.remove(i);
                 i--;
             } else if(berry.getY() > getHeight()) {
